@@ -21,6 +21,10 @@ class PlayerInfo:
         self.whosTurn = 1
         self.lineupNames = [p1name, p2name,p3name]
         self.lineupPieces = [p1, p2, p3]
+    
+    def rotatePlayers():
+        pass
+        
 
 
 # Setting up the board
@@ -36,11 +40,24 @@ class Game:
             
             [[blank,blank,blank],[blank,blank,blank],[blank,blank,blank]]])
 
+        # choiceLevel is the indice for the lastMove. Also controls menu display.
+        self.choiceLevel=0
+        self.lastMove = [0,0,0]
+
+    # Returns True/False if the lastMove is available.
+    def checkValid():
+        pass
+
+    # Check if the last move is a winning move.
+    def isWinner():
+        pass
+
+
 
 
 # Menu for players to update their game settings
 def mainMenu(numPlayers, board):
-    print(numPlayers)
+    print(f"{numPlayers} = number of players")
 
 
 # print out the board
@@ -52,8 +69,10 @@ def printBoard(board):
     
     print(f"       {top[0]} Top                {top[1]} Middle             {top[2]} Bottom\n")
     print(f"    ", end="")
-    for num in range(3):
-        print(f" {col[0]}   {col[1]}   {col[2]}        ", end="")
+    # 24 spaces used to push over the column selection
+    print("                        ", end="")
+    print(f" {col[0]}   {col[1]}   {col[2]}        ", end="")
+
     print("")
 
     for numrow in range(board.size):
@@ -109,7 +128,6 @@ while playing:
 
     # End menu allows players to quit, or keep or change 
     # game settings if they are still playing.
-    #playing = endGameMenu()
-    playing = False;
+    playing = endGameMenu()
 
 print("Goodbye, world!")
