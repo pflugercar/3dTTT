@@ -22,7 +22,6 @@ class PlayerInfo:
         self.lineup_names = [name1, name2, name3]
         self.lineup_pieces = [piece1, piece2, piece3]
 
-
     def rotate_players(self):
         self.lineup_names.append(self.lineup_names[0])
         self.lineup_names.pop(0)
