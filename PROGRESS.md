@@ -4,11 +4,11 @@
 
 | Progress  | Category      | Item          | Description                                       |
 | :-------- | :------------ | :------------ | :------------------------------------------------ |
-| Planning  | Essential     | mainMenu      | Select sub menu or play                           |
-| Assigned  | Essential     | printBoard    | Print the board with menu selections for the user |
+| Assigned  | Essential     | mainMenu      | Select sub menu or play                           |
+| Complete  | Essential     | printBoard    | Print the board with menu selections for the user |
 | Planning  | Essential     | checkValid    | Check to see if last move is valid                |
 | Planning  | Essential     | isWinner      | Check to see if the last move is a winner         |
-| Planning  | Essential     | rotatePlayers | Rotate the players                                |
+| Complete  | Essential     | rotatePlayers | Rotate the players                                |
 
 ## **Project Expansion**
 
