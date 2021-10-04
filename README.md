@@ -6,12 +6,12 @@ This program was written through an Experimental Apprenticeship Program, a group
 ## **Developers**
 
 ### Craig Reinecke (Project Lead)
-* [GitHub.com](https://github.com/pflugercar)
+* [GitHub.com/pflugercar](https://github.com/pflugercar)
 * <craig@rhino-key.com> 
 * Discord: @AstroCAR#8796
 
 ### Ramon Morales (Developer)
-* [GitHub.com](https://github.com/Rayman70)
+* [GitHub.com/Rayman70](https://github.com/Rayman70)
 
 ## **The MIT License**
 
