@@ -4,6 +4,7 @@
 
 import numpy as np
 
+
 class PlayerInfo:
     def __init__(self):
         # Default is 3 players.
@@ -21,7 +22,6 @@ class PlayerInfo:
         self.whos_turn = 1
         self.lineup_names = [name1, name2, name3]
         self.lineup_pieces = [piece1, piece2, piece3]
-
 
     def rotate_players(self):
         self.lineup_names.append(self.lineup_names[0])
@@ -68,7 +68,52 @@ class GameClass:
 
 # Menu for players to update their game settings
 def main_menu(num_players, game):
-    pass
+    print(f"{players.num_players} = number of players")
+    print("Welcome to 3d Tic Tac Toe!")
+    print("Please, make a selection.")
+    print("1) Number of players = 3")
+    print("2) Player names and pieces")
+    print("   --Name--   --Piece--")
+    print("  ", players.lineup_names[0], "     ", players.lineup_pieces[0])
+    print("  ", players.lineup_names[1], "     ", players.lineup_pieces[1])
+    print("  ", players.lineup_names[2], "     ", players.lineup_pieces[2])
+    print("3) No change and dive straight into the game")
+
+    print("Which choice would you like to select? ")
+    print("1) Change player names")
+    print("2) Change player pieces")
+    sub_menu = input("Make a choice: ")
+    if sub_menu == "1":
+        name_change()
+        return main_menu(num_players, game)
+    elif sub_menu == "2":
+        piece_change()
+        return main_menu(num_players, game)
+
+
+def name_change():
+    choice = input("Which player's name would you like to change? (1/2/3): ")
+    if choice == "1":
+        players.lineup_names[0] = input("Enter first player name: ")
+    elif choice == "2":
+        players.lineup_names[1] = input("Enter second player name: ")
+    elif choice == "3":
+        players.lineup_names[2] = input("Enter third player name: ")
+
+
+def piece_change():
+    choice = input("Which player's piece would you like to change? (1/2/3): ")
+    if choice == "1":
+        players.lineup_pieces[0] = input("Enter a capital letter for your piece: ")
+    elif choice == "2":
+        players.lineup_pieces[1] = input("Enter a capital letter for your piece: ")
+        while players.lineup_pieces[0] == players.lineup_pieces[1]:
+            players.lineup_pieces[1] = input("Enter another piece: ")
+    elif choice == "3":
+        players.lineup_pieces[2] = input("Enter a capital letter for your piece: ")
+        while players.lineup_pieces[0] == players.lineup_pieces[1] or \
+                players.lineup_pieces[1] == players.lineup_pieces[2]:
+            players.lineup_pieces[2] = input("Please enter a capital letter: ")
 
 
 # print out the board
@@ -98,7 +143,6 @@ def print_board(game):
     col = ["   ", "   ", "   "]
     if game.choice_level == 2:
         col = ["(1)", "(2)", "(3)"]
-
 
     # printing the layer header
     print(f"       {top[0]} Top {top[3]}            {top[1]} Middle {top[4]}         {top[2]} Bottom {top[5]}\n")
